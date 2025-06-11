@@ -16,6 +16,9 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver # MySQL, MariaDB
     # driver-class-name: org.mariadb.jdbc.Driver # MariaDB
     # driver-class-name: org.postgresql.Driver # PostgreSQL
-    url: jdbc:(여기에 주소 입력)
-    username: avnadmin
-    password: (여기에 비번 입력)
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+gemini:
+  key: ${GEMINI_KEY}
