@@ -9,8 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.io.IOException;
-
 @Controller
 @RequiredArgsConstructor
 public class PromptController {
@@ -25,7 +23,7 @@ public class PromptController {
     }
 
     @PostMapping
-    public String submit(PromptForm promptForm, Model model) throws IOException, InterruptedException {
+    public String submit(PromptForm promptForm, Model model) {
         String promptText = geminiService.generate(promptForm.text());
         model.addAttribute("promptText",promptText);
         return "index";
